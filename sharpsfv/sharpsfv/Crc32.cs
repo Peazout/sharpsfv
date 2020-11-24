@@ -97,15 +97,18 @@ namespace sharpsfv
         }
         public uint Update(byte[] buffer, int offset, int length)
         {
-            return Update(Value, buffer, offset, length);
+            Value = Update(Value, buffer, offset, length);
+            return Value;
         }
         public uint Update(IReadOnlyList<byte> bytes)
         {
-            return Update(Value, bytes);
+            Value = Update(Value, bytes);
+            return Value;
         }
         public uint Update(IEnumerable<byte> bytes)
         {
-            return Update(Value, bytes);
+            Value = Update(Value, bytes);
+            return Value;
         }
         public void Reset()
         {
